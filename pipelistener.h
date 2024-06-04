@@ -10,7 +10,7 @@
 #include <windows.h>
 #define PipeRead(fd, ptr, size) _read(fd, ptr, size)
 #define PipeWrite(fd, str, size) _write(fd, str, size)
-#define PipeNew(fds) _pipe(pipe_fds, 4096, _O_BINARY | _O_NOINHERIT)
+#define PipeNew(fds) _pipe(fds, 4096, _O_BINARY | _O_NOINHERIT)
 #define PipeClose(fd) _close(fd)
 #define PipeNonBlock(fd) \
     DWORD lpMode = PIPE_READMODE_BYTE | PIPE_NOWAIT; \
